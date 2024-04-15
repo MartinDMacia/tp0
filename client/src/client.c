@@ -19,7 +19,7 @@ int main(void)
 	if (logger == NULL){
 		printf("No se pudo crear el logger");
 		log_destroy(logger);
-		exit();
+		exit(0);
 	}
 
 	// Usando el logger creado previamente
@@ -36,7 +36,7 @@ int main(void)
 		printf("No se pudo iniciar el config");
 		log_destroy(logger);
 		config_destroy(config);
-		exit();
+		exit(0);
 	}
 	// Usando el config creado previamente, leemos los valores del config y los 
 	// dejamos en las variables 'ip', 'puerto' y 'valor'
@@ -131,5 +131,5 @@ void terminar_programa(int conexion, t_log* logger, t_config* config)
 	liberar_conexion(conexion);
 	log_destroy(logger);
 	config_destroy(config);
-	exit();
+	exit(0);
 }
